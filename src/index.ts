@@ -6,11 +6,11 @@ type Options = {
 };
 
 /** Returns `true` if the provided string is in a slug form and `false` otherwise. */
-const isSlugged = (str: string, options?: Options) => {
+const isSlugged = (string: string, options?: Options) => {
   const { separator = '-', requireSeparator = false } = options ?? {};
-  if (requireSeparator && str.indexOf(separator) === -1) return false;
+  if (requireSeparator && string.indexOf(separator) === -1) return false;
   const regex = new RegExp(`^[a-zA-Z0-9](?:${separator}?[a-zA-Z0-9])*$`);
-  return regex.test(str);
+  return regex.test(string);
 };
 
 export default isSlugged;
