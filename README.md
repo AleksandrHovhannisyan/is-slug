@@ -18,7 +18,7 @@ yarn add -D is-slug
 ## Usage
 
 ```ts
-import isSlug from 'isSlug';
+import isSlug from 'is-slug';
 
 isSlug('hello-world'); // true
 
