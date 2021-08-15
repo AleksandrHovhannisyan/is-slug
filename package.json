@@ -1,7 +1,8 @@
 {
   "name": "is-slugged",
   "version": "1.0.0",
-  "description": "Check if a given string is in slug form.",
+  "repository": "https://github.com/AleksandrHovhannisyan/is-slug",
+  "description": "Check if a string is in slug form.",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "files": [
@@ -12,8 +13,7 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build": "npm-run-all build:*",
     "test": "jest",
-    "test:watch": "jest --watch --silent=false",
-    "prepublishOnly": "test && npm run tsc"
+    "test:watch": "jest --watch --silent=false"
   },
   "author": "Aleksandr Hovhannisyan",
   "license": "MIT",
