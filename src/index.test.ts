@@ -13,6 +13,12 @@ describe('isSlug', () => {
   it('returns false for an unslugged string', () => {
     expect(isSlug('Full-time employees work full time. Real-time events happen in real time.')).toStrictEqual(false);
   });
+  it('returns false for string starting with a separator', () => {
+    expect(isSlug('-not-a-slugged-word')).toStrictEqual(false);
+  });
+  it('returns false for string containing consecutive separators', () => {
+    expect(isSlug('not-a--slugged-word')).toStrictEqual(false);
+  });
   it('supports custom separators', () => {
     expect(isSlug('a_slugged_string', { separator: '_' })).toStrictEqual(true);
     expect(isSlug('a-slugged-string', { separator: '_' })).toStrictEqual(false);
