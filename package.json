@@ -17,6 +17,7 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build": "npm-run-all build:*",
+    "prepublishOnly": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch --silent=false"
   },
