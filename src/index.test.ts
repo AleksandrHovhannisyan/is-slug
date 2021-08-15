@@ -1,20 +1,20 @@
-import isSlugged from '.';
+import isSlug from '.';
 
-describe('isSlugged', () => {
+describe('isSlug', () => {
   it('returns true for a slugged string', () => {
-    expect(isSlugged('a-slugged-string')).toStrictEqual(true);
+    expect(isSlug('a-slugged-string')).toStrictEqual(true);
   });
   it('returns true for a word with no separators if separators are not required', () => {
-    expect(isSlugged('abc')).toStrictEqual(true);
+    expect(isSlug('abc')).toStrictEqual(true);
   });
   it('returns false for a word with no separators if at least one separator is required', () => {
-    expect(isSlugged('abc', { requireSeparator: true })).toStrictEqual(false);
+    expect(isSlug('abc', { requireSeparator: true })).toStrictEqual(false);
   });
   it('returns false for an unslugged string', () => {
-    expect(isSlugged('Full-time employees work full time. Real-time events happen in real time.')).toStrictEqual(false);
+    expect(isSlug('Full-time employees work full time. Real-time events happen in real time.')).toStrictEqual(false);
   });
   it('supports custom separators', () => {
-    expect(isSlugged('a_slugged_string', { separator: '_' })).toStrictEqual(true);
-    expect(isSlugged('a-slugged-string', { separator: '_' })).toStrictEqual(false);
+    expect(isSlug('a_slugged_string', { separator: '_' })).toStrictEqual(true);
+    expect(isSlug('a-slugged-string', { separator: '_' })).toStrictEqual(false);
   });
 });
