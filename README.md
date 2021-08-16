@@ -35,7 +35,8 @@ isSlug('hello-world, how are you?'); // false
 
 ### isSlug(string, options?)
 
-| option             | type      | description                                                                                           | default |
-|--------------------|-----------|-------------------------------------------------------------------------------------------------------|---------|
-| `separator`        | `string`  | The symbol used to separate parts of a slugged string.                                                | `-`     |
-| `requireSeparator` | `boolean` | If `true`, at least one separator must be present in the string for it to be considered a valid slug. | `false` |
+| option                    | type      | description                                                                                           | default         |
+|---------------------------|-----------|-------------------------------------------------------------------------------------------------------|-----------------|
+| `separator`               | `string`  | The symbol used to separate parts of a slugged string.                                                | `-`             |
+| `requireSeparator`        | `boolean` | If `true`, at least one separator must be present in the string for it to be considered a valid slug. | `false`         |
+| `nonSeparatingCharacters` | `RegExp`  | A regex character set or pattern to match non-separating characters in the string.                    | `/[a-zA-Z0-9]/` |
