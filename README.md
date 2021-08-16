@@ -21,14 +21,20 @@ yarn add -D is-slug
 import isSlug from 'is-slug';
 
 isSlug('hello-world'); // true
-
 isSlug('hello_world', { separator: '_' }); // true
+isSlug('-hello-world'); // false
+isSlug('hello-world-'); // false
+isSlug('hello--world'); // false
 
+isSlug('hello'); // true
 isSlug('hello', { requireSeparator: true }); // false
 
 isSlug('hello, world'); // false
-
 isSlug('hello-world, how are you?'); // false
+
+isSlug('1-2-3', { nonSeparatingCharacters: /a-z/ }); // false
+isSlug('A-B-C', { nonSeparatingCharacters: /a-z/ }); // false
+isSlug('abc-def-xyz', { nonSeparatingCharacters: /a-z/ }); // true
 ```
 
 ## API
