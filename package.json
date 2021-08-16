@@ -9,6 +9,7 @@
     "slug regex"
   ],
   "main": "./lib/index.js",
+  "type": "module",
   "files": [
     "lib/**/*"
   ],
