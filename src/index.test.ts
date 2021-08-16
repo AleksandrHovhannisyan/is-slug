@@ -16,6 +16,9 @@ describe('isSlug', () => {
   it('returns false for string starting with a separator', () => {
     expect(isSlug('-not-a-slugged-word')).toStrictEqual(false);
   });
+  it('returns false for string ending with a separator', () => {
+    expect(isSlug('not-a-slugged-word-')).toStrictEqual(false);
+  });
   it('returns false for string containing consecutive separators', () => {
     expect(isSlug('not-a--slugged-word')).toStrictEqual(false);
   });

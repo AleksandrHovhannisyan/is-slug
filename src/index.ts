@@ -8,8 +8,7 @@ type Options = {
 /** Returns `true` if the provided string is in a slug form and `false` otherwise. */
 const isSlug = (string: string, options?: Options) => {
   const { separator = '-', requireSeparator = false } = options ?? {};
-  if (requireSeparator && string.indexOf(separator) === -1) return false;
-  const regex = new RegExp(`^[a-zA-Z0-9](?:${separator}?[a-zA-Z0-9])*$`);
+  const regex = new RegExp(`^[a-zA-Z0-9](?:${separator}${requireSeparator ? '' : '?'}[a-zA-Z0-9])*$`);
   return regex.test(string);
 };
 
