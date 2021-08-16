@@ -27,11 +27,11 @@ describe('isSlug', () => {
     expect(isSlug('a-slugged-string', { separator: '_' })).toStrictEqual(false);
   });
   it('supports custom character sets as regex', () => {
-    expect(isSlug('0-1-2', { nonSeparatingCharacters: /[a-z]/ })).toStrictEqual(false);
-    expect(isSlug('A-B-C', { nonSeparatingCharacters: /[a-z]/ })).toStrictEqual(false);
-    expect(isSlug('a-b-c', { nonSeparatingCharacters: /[a-z]/ })).toStrictEqual(true);
-    expect(isSlug('e-ee-eee', { nonSeparatingCharacters: /[e]/ })).toStrictEqual(true);
-    expect(isSlug('a-aa-eee', { nonSeparatingCharacters: /[e]/ })).toStrictEqual(false);
-    expect(isSlug('e-ee-eee', { nonSeparatingCharacters: new RegExp('[e]') })).toStrictEqual(true);
+    expect(isSlug('0-1-2', { charset: /[a-z]/ })).toStrictEqual(false);
+    expect(isSlug('A-B-C', { charset: /[a-z]/ })).toStrictEqual(false);
+    expect(isSlug('a-b-c', { charset: /[a-z]/ })).toStrictEqual(true);
+    expect(isSlug('e-ee-eee', { charset: /[e]/ })).toStrictEqual(true);
+    expect(isSlug('a-aa-eee', { charset: /[e]/ })).toStrictEqual(false);
+    expect(isSlug('e-ee-eee', { charset: new RegExp('[e]') })).toStrictEqual(true);
   });
 });
