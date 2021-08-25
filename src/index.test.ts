@@ -5,11 +5,8 @@ describe('isSlug', () => {
     expect(isSlug('a-slugged-string')).toStrictEqual(true);
     expect(isSlug('another-slugged-string')).toStrictEqual(true);
   });
-  it('returns true for a string with no separators if separators are not required', () => {
+  it('returns true for a string with no separators', () => {
     expect(isSlug('abc')).toStrictEqual(true);
-  });
-  it('returns false for a string with no separators if at least one separator is required', () => {
-    expect(isSlug('abc', { requireSeparator: true })).toStrictEqual(false);
   });
   it('returns false if the string contains whitespace', () => {
     expect(isSlug('a-slugged -string')).toStrictEqual(false);

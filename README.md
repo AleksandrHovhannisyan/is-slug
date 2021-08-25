@@ -27,8 +27,6 @@ isSlug('hello-world-'); // false
 isSlug('hello--world'); // false
 
 isSlug('hello'); // true
-isSlug('hello', { requireSeparator: true }); // false
-
 isSlug('hello, world'); // false
 isSlug('hello-world, how are you?'); // false
 
@@ -44,5 +42,4 @@ isSlug('abc-def-xyz', { charset: /[a-z]/ }); // true
 | option             | type      | description                                                                                           | default         |
 |--------------------|-----------|-------------------------------------------------------------------------------------------------------|-----------------|
 | `separator`        | `string`  | The symbol used to separate parts of a slugged string.                                                | `-`             |
-| `requireSeparator` | `boolean` | If `true`, at least one separator must be present in the string for it to be considered a valid slug. | `false`         |
 | `charset`          | `RegExp`  | A regex character set or pattern to match non-separating characters in the string.                    | `/[a-zA-Z0-9]/` |
